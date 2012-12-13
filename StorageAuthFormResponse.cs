@@ -5,14 +5,14 @@ using System.Web;
 
 namespace Umea.se.MiljoHalsoKontroll.PresentationLayer
 {
-    public class storageAuthFormResponseField
+    public class StorageAuthFormResponseField
     {
         public string name { get; set; }
         public string value { get; set; }
     }
-    public class storageAuthFormResponse
+    public class StorageAuthFormResponse
     {
         public string action { get; set; }
-        public List<storageAuthFormResponseField> fields { get; set; }
+        public List<StorageAuthFormResponseField> fields { get; set; }
     }
 }

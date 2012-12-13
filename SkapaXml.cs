@@ -70,7 +70,7 @@ namespace Umea.se.MiljoHalsoKontroll.PresentationLayer
                 HttpWebResponse objHttpWebResponse;
                 objHttpWebResponse = (HttpWebResponse)objWebRequest.GetResponse();
                 StreamReader streamReader = new StreamReader(objHttpWebResponse.GetResponseStream());
-                storageAuthFormResponse storageAuth = JsonConvert.DeserializeObject<storageAuthFormResponse>(streamReader.ReadToEnd());
+                StorageAuthFormResponse storageAuth = JsonConvert.DeserializeObject<StorageAuthFormResponse>(streamReader.ReadToEnd());
 
                 //Det första vi får är action för vart vi ska posta data
                 objWebRequest = WebRequest.Create(storageAuth.action);
@@ -80,7 +80,7 @@ namespace Umea.se.MiljoHalsoKontroll.PresentationLayer
 
                 StringBuilder sb = new StringBuilder();
 
-                foreach (storageAuthFormResponseField item in storageAuth.fields)
+                foreach (StorageAuthFormResponseField item in storageAuth.fields)
                 {
                     sb.AppendFormat("--{0}", boundary);
                     sb.AppendFormat("\r\n");
@@ -200,7 +200,7 @@ namespace Umea.se.MiljoHalsoKontroll.PresentationLayer
                 HttpWebResponse objHttpWebResponse;
                 objHttpWebResponse = (HttpWebResponse)objWebRequest.GetResponse();
                 StreamReader streamReader = new StreamReader(objHttpWebResponse.GetResponseStream());
-                storageAuthFormResponse storageAuth = JsonConvert.DeserializeObject<storageAuthFormResponse>(streamReader.ReadToEnd());
+                StorageAuthFormResponse storageAuth = JsonConvert.DeserializeObject<StorageAuthFormResponse>(streamReader.ReadToEnd());
 
                 //Det första vi får är action för vart vi ska posta data
                 objWebRequest = WebRequest.Create(storageAuth.action);
@@ -210,7 +210,7 @@ namespace Umea.se.MiljoHalsoKontroll.PresentationLayer
 
                 StringBuilder sb = new StringBuilder();
 
-                foreach (storageAuthFormResponseField item in storageAuth.fields)
+                foreach (StorageAuthFormResponseField item in storageAuth.fields)
                 {
                     sb.AppendFormat("--{0}", boundary);
                     sb.AppendFormat("\r\n");
